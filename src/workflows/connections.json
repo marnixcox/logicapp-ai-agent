@@ -1,0 +1,16 @@
+{
+    "agentConnections": {
+        "agent": {
+            "authentication": {
+                "type": "ManagedServiceIdentity"
+            },
+            "displayName": "agent",
+            "endpoint": "@{appsetting('AI_PROJECT_ENDPOINT')}",
+            "resourceId": "/subscriptions/@{appsetting('WORKFLOWS_SUBSCRIPTION_ID')}/resourceGroups/@{appsetting('WORKFLOWS_RESOURCE_GROUP_NAME')}/providers/Microsoft.CognitiveServices/accounts/@{appsetting('AI_FOUNDRY_NAME')}/projects/@{appsetting('AI_PROJECT_NAME')}",
+            "type": "FoundryAgentService"
+        }
+    },
+    "functionConnections": {},
+    "managedApiConnections": {},
+    "serviceProviderConnections": {}
+}
