@@ -33,7 +33,7 @@ module aiFoundry './aifoundry/aifoundry.bicep' = {
     abbrs: abbrs
     environmentName: environmentName
     resourceToken: resourceToken
-    aiFoundryName: '${abbrs.cognitiveServicesAccounts}${resourceToken}-${environmentName}'
+    aiFoundryName: '${abbrs.aiFoundryAccounts}-${resourceToken}-${environmentName}'
   }
 }
 
@@ -52,7 +52,7 @@ module aifoundryRoleAssignment './aifoundry/role-assignment.bicep' = {
 }
 
 // Storage for Azure Functions and Logic Apps 
-module storage './storage.bicep' = {
+module storage './storage/storage.bicep' = {
   name: '${deployment().name}-storage'
   params: {
     location: location
@@ -75,7 +75,7 @@ module logicIdentity 'br/public:avm/res/managed-identity/user-assigned-identity:
 }
 
 // Logic App Standard Plan
-module logicappplan './logicappplan.bicep' = {
+module logicappplan './logicapp/plan.bicep' = {
   name: '${deployment().name}-logicappplan'
   params: {
     location: location
@@ -88,7 +88,7 @@ module logicappplan './logicappplan.bicep' = {
 }
 
 // Logic App Standard Workflows with shared plan
-module workflows './workflows.bicep' = {
+module workflows './logicapp/workflows.bicep' = {
   name: '${deployment().name}-workflows'
   params: {
     location: location

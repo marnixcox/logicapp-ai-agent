@@ -17,7 +17,7 @@ This template utilizes the following Azure resources:
 
 ### How to get started
 
-1. Install Visual Studio Code with Azure Logic Apps (Standard) and Azure Functions extensions
+1. Install Visual Studio Code with Azure Logic Apps (Standard) extensions
 1. Create a new folder and switch to it in the Terminal tab
 1. Run `azd auth login`
 1. Run `azd init -t https://github.com/marnixcox/logicapp-ai-agent`
@@ -41,9 +41,9 @@ The following folder structure is created.
 ### Key Infrastructure Files
 - `main.bicep` - Main orchestration
 - `monitoring.bicep` - Observability stack
-- `storage.bicep` - Storage account for Function and Logic App  
-- `workflows.bicep` - Logic App  
-- `keyvault.bicep` - Key Vault
+- `storage/storage.bicep` - Storage account for Function and Logic App  
+- `logicapp/workflows.bicep` - Logic App  
+- `logicapp/plan.bicep` - Logic App Plan 
 - `aifoundry/aifoundry.bicep` - AI Foundry
 - `aifoundry/role-assignment.bicep` - To give Logic Apps access to AI Foundry
 
@@ -69,11 +69,11 @@ Resource group and all components will be created.
 
 ### Deploy Contents 
 
-After coding some functions and creating Azure Logic App Standard workflows these can be deployed with another single command.
+After creating Azure Logic App Standard workflows these can be deployed with another single command.
 
 - Run `azd deploy`
 
-Functions code and workflows will be deployed into the existing infra components.
+Workflows will be deployed into the existing infra components.
 
 <img src="assets/deploy.png" width="50%" alt="Deploy">
 

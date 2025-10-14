@@ -22,7 +22,7 @@ param logAnalyticsWorkspaceResourceId string
 module storage 'br/public:avm/res/storage/storage-account:0.26.0' = {
   name: 'storage'
   params: {
-    name: replace('${abbrs.keyVaultVaults}${resourceToken}${environmentName}', '-', '')
+    name: replace('${abbrs.storageStorageAccounts}${resourceToken}${environmentName}', '-', '')
     location: location
     tags: tags
     diagnosticSettings: [
