@@ -5,7 +5,7 @@ Logic App Standard is Microsoft's low code offering for implementing enterprise 
 
 Azure Logic Apps can now integrate AI agents, which use large language models (LLMs) and an "agent loop" to perform complex, multi-step tasks autonomously. These agents can reason, make decisions, and use tools (prebuilt Logic App actions) to complete a workflow that evolves based on results. This is a new approach that complements existing structured automation with an AI-first, adaptive pattern, allowing agents to plan, act, learn, and reason within the low-code platform.
 
-This templates includes a Logic App Standard and AI Foundry deployment.
+This template includes a Logic App Standard and AI Foundry deployment.
 
 ### Application architecture
 
