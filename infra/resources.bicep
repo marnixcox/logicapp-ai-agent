@@ -65,6 +65,20 @@ module storage './storage/storage.bicep' = {
   }
 }
 
+// KeyVault 
+module keyvault './keyvault/keyvault.bicep' = {
+  name: '${deployment().name}-keyvault'
+  params: {
+    location: location
+    tags: tags
+    abbrs: abbrs
+    environmentName: environmentName
+    resourceToken: resourceToken
+    logAnalyticsWorkspaceResourceId: monitoring.outputs.logAnalyticsWorkspaceResourceId
+    logicAppIdentity: logicIdentity.outputs.principalId
+  }
+}
+
 // User Assigned Identity for Logic App
 module logicIdentity 'br/public:avm/res/managed-identity/user-assigned-identity:0.2.1' = {
   name: '${deployment().name}-logicidentity'

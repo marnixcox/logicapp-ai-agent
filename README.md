@@ -9,11 +9,14 @@ This templates includes a Logic App Standard and AI Foundry deployment.
 
 ### Application architecture
 
+<img src="assets/resources.png" width="50%" alt="Resources">
+
 This template utilizes the following Azure resources:
 
-- [**Azure Logic App Standard**](https://learn.microsoft.com/azure/logic-apps/) to design the workflows
-- [**Azure Monitor**](https://docs.microsoft.com/azure/azure-monitor/) for monitoring and logging
 - [**AI Foundry**](https://learn.microsoft.com/en-us/azure/ai-foundry/) for  for building, deploying, and managing AI and generative AI applications
+- [**Azure Logic App Standard**](https://learn.microsoft.com/azure/logic-apps/) to design the workflows
+- [**Azure Key Vault**](https://docs.microsoft.com/azure/key-vault/) for securing secrets
+- [**Azure Monitor**](https://docs.microsoft.com/azure/azure-monitor/) for monitoring and logging
 
 ### How to get started
 
@@ -30,6 +33,10 @@ The following folder structure is created.
 
 ```
 ├── infra                      [ Infrastructure As Code files ]
+│   ├── aifoundry              [ AI Foundry files ]
+│   ├── keyvault               [ Key Vault files ]
+│   ├── logicapp               [ Logic app files ]
+│   ├── storage                [ Storage files ]
 │   ├── main.bicep             [ Main infrastructure file ]
 │   └── main.parameters.json   [ Parameters file ]
 ├── src                        [ Application code ]
@@ -39,13 +46,15 @@ The following folder structure is created.
 ```
 
 ### Key Infrastructure Files
-- `main.bicep` - Main orchestration
-- `monitoring.bicep` - Observability stack
-- `storage/storage.bicep` - Storage account for Function and Logic App  
-- `logicapp/workflows.bicep` - Logic App  
-- `logicapp/plan.bicep` - Logic App Plan 
 - `aifoundry/aifoundry.bicep` - AI Foundry
 - `aifoundry/role-assignment.bicep` - To give Logic Apps access to AI Foundry
+- `keyvault/keyvault.bicep` - Key Vault
+- `logicapp/plan.bicep` - Logic App Plan 
+- `logicapp/workflows.bicep` - Logic App Standard
+- `storage/storage.bicep` - Storage account for Logic App  
+- `main.bicep` - Main orchestration
+- `monitoring.bicep` - Observability stack
+- `resources.bicep` - Resource collection
 
 ### Provision Infrastructure 
 
